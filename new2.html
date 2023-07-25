@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new2.css">
+</head>
+<body>
+
+  <div class="para">
+    <p id="paragraph"></p>
+    <a href="New.html">Back To Login</a>
+  </div>
+  
+  <div class="notice">
+    <h3>Voting ends on 27th April</h3>
+  </div>
+  <div id="countdown">
+    <div id="timer">
+      <span id="days"></span>
+      <span id="hours"></span>
+      <span id="minutes"></span>
+      <span id="seconds"></span>
+    </div>
+  </div>
+
+  <hr>
+
+    <div class="container">
+        <div class="candidate">
+            <div class="candi-image1">
+              <img src="peter pic.png" width="100%" alt="">
+            </div>
+            <div class="names">
+              <h3>Peter Obi</h3>
+            </div>
+            <div class="party">
+              <h1>LP</h1>
+            </div>
+            <div class="vote">
+              <button type="button" id="voting" onclick="openPopup()" onclick="openVote(1)">VOTE</button>
+              <!-- <button type="button" onclick="vote()">Vote</button> -->
+              <!-- <p id="vote-count">Current vote count: 0</p> -->
+              <p>Votes: <span id="candidate1-votes">0</span></p>
+            </div>
+          </div>
+    
+          <div class="candidate">
+            <div class="candi-image2">
+              <img src="atiku pic.png" width="100%" alt="">
+            </div>
+            <div class="names">
+              <h3>Atiku Abubakkar</h3>
+            </div>
+            <div class="party">
+              <h1>PDP</h1>
+            </div>
+            <div class="vote">
+              <!-- <button type="submit" id="voting">VOTE</button> -->
+              <button type="button" id="voting" onclick="openPopup()" onclick="openVote(2)">VOTE</button>
+              <!-- <p id="vote-count">Current vote count: 0</p> -->
+              <p>Votes: <span id="candidate2-votes">0</span></p>
+            </div>
+          </div>
+    
+          <div class="candidate">
+            <div class="candi-image3">
+              <img src="wike pic.png" width="100%" alt="">
+            </div>
+            <div class="names">
+              <h3>Nyesom Wike</h3>
+            </div>
+            <div class="party">
+              <h1>APC</h1>
+            </div>
+            <div class="vote">
+              <button type="submit" id="voting" onclick="openPopup()" onclick="openVote(3)">VOTE</button>
+              <p>Votes: <span id="candidate3-votes">0</span></p>
+            </div>
+          </div>
+    
+          <div class="candidate">
+            <div class="candi-image1">
+              <img src="rabiu.png" width="100%" alt="">
+            </div>
+            <div class="names">
+              <h3>Rabiu Kwankwaso</h3>
+            </div>
+            <div class="party">
+              <h1>NNPP</h1>
+            </div>
+            <div class="vote">
+              <button type="submit" id="voting" onclick="openPopup()" onclick="openVote(4)">VOTE</button>
+              <p>Votes: <span id="candidate4-votes">0</span></p>
+            </div>
+          </div>
+    
+          <div class="candidate">
+            <div class="candi-image5">
+              <img src="dumo.png" width="100%" alt="">
+            </div>
+            <div class="names">
+              <h3>Dumo Lulu Briggs</h3>
+            </div>
+            <div class="party">
+              <h1>Accord</h1>
+            </div>
+            <div class="vote">
+              <button type="submit" id="voting" onclick="openPopup()" onclick="openVote(5)">VOTE</button>
+              <p>Votes: <span id="candidate5-votes">0</span></p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+      <div class="popUp" id="popUp">
+        <img src="https://cdn.pixabay.com/photo/2014/04/02/10/12/checkbox-303113_960_720.png" width="30%" alt="">
+        <h2>SUCCESS!</h2>
+        <p>You have successfully voted your preferred candidate.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+    
+    <!-- <div class="popUp"></div> -->
+
+  
+
+    <script src="new2.js"></script>
+
+    <script>
+      const countdown = () => {
+  const countdownDate = new Date("June 20, 2023 00:00:00").getTime();
+  const now = new Date().getTime();
+  const difference = countdownDate - now;
+  
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+  document.getElementById("days").innerHTML = days + "d";
+  document.getElementById("hours").innerHTML = hours + "h";
+  document.getElementById("minutes").innerHTML = minutes + "m";
+  document.getElementById("seconds").innerHTML = seconds + "s";
+}
+
+setInterval(countdown, 1000);
+
+// const popUp = document.querySelector('')
+let popUp = document.getElementById("popUp")
+
+function openPopup() {
+  popUp.classList.add("open-popup")
+}
+
+function closePopup() {
+  popUp.classList.remove("open-popup")
+}
+
+    </script>
+
+</body>
+</html>
